@@ -62,7 +62,6 @@ body * {
   height: 112px;
 }
 
-
 #profile p {
   font-weight: 500;
   line-height: 24px;
@@ -131,15 +130,14 @@ footer {
 }
 
 /*botao dark e light mode*/
-#switcher  {
+#switcher {
   position: relative;
   width: 64px;
   margin: 4px auto;
 }
 
 .light #switcher button {
-  right: 0;
-  left: initial;
+  animation: desliza 0.2s forwards;
 }
 
 #switcher span {
@@ -165,4 +163,29 @@ footer {
   left: 0;
   transform: translateY(-50%);
   top: 50%;
+
+  animation: volta 0.2s;
 }
+
+#switcher button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
+/*animações*/
+@keyframes desliza {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+  }
+
+  @keyframes volta {
+    from {
+      left: 50%;
+    }
+    to {
+      left: 0;
+    }
+  }
